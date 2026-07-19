@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: 69-s2-db
+    ports:
+      - 54321:5432
+    environment:
+      - POSTGRES_PASSWORD=1p@ssw0rd
+      - POSTGRES_USER=prawee
+      - POSTGRES_DB=prawee
+
+  admin:
+    image: dpage/pgadmin4
+    container_name: 69-s2-admin
+    ports:
+      - 8080:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pattarakorn-sa@rmutp.ac.th
+      - PGADMIN_DEFAULT_PASSWORD=123456
+    depends_on:
+      - db 
