@@ -21,8 +21,21 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
     volumes:
       - ./data-pgadmin:/var/lib/pgadmin
+
+  69-s2-app:
+    image: prawee/strapi
+    container_name: 69-s2-app
+    ports:
+      - "9092:1337"
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${POSTGRES_DB}
+      DATABASE_USERNAME: ${POSTGRES_USER}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
-      - db 
+      - db
 
 volumes:
   postgres_data:
