@@ -27,7 +27,7 @@ Content-Type: application/json
 ###
 
 ## Forgot Password
-POST http://localhost:9092/admin/forgot-password
+POST http://localhost:9092/admin/auth/forgot-password
 Content-Type: application/json
 
 {
@@ -37,5 +37,5 @@ Content-Type: application/json
 ###
 
 ## Profile
-GET http://localhost:9092/admin/profile
+GET http://localhost:9092/admin/users/me
 Authorization: Bearer 
