@@ -1,4 +1,5 @@
 .env
+.env.backup-*
 data-postgres
 data-pgadmin
 api.http
